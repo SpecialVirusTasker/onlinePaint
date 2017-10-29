@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoginApp</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	  <title>LoginApp</title>
+	  <link rel="stylesheet" href="/css//bootstrap.css" />
+	  <link rel="stylesheet" href="/css//style.css" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script type = "text/javascript" src = "/js/alignMe.js"></script>
+	  <script type = "text/javascript" src = "/js/boldMe.js"></script>
+	  <script type = "text/javascript" src = "/js/borderMe.js"></script>
+	  <script type = "text/javascript" src = "/js/changeLogosText.js"></script>
+	  <script type = "text/javascript" src = "/js/cleanMe.js"></script>
+	  <script type = "text/javascript" src = "/js/colorMe.js"></script>
+	  <script type = "text/javascript" src = "/js/deleteMe.js"></script>
+	  <script type = "text/javascript" src = "/js/flipMe.js"></script>
+	  <script type = "text/javascript" src = "/js/fontMe.js"></script>
+	  <script type = "text/javascript" src = "/js/italicMe.js"></script>
+	  <script type = "text/javascript" src = "/js/moveMe.js"></script>
+	  <script type = "text/javascript" src = "/js/rotateMe.js"></script>
+	  <script type = "text/javascript" src = "/js/sizeMe.js"></script>
+	  <script type = "text/javascript" src = "/js/unboldMe.js"></script>
+	  <script type = "text/javascript" src = "/js/unflipMe.js"></script>
+	  <script type = "text/javascript" src = "/js/unitalicMe.js"></script>
+	  <link rel = "stylesheet" type = "text/css" href = "/css/goButton.css"/>
+	  <link rel = "stylesheet" type = "text/css" href = "/css/main.css"/>
+	  <link rel = "stylesheet" type = "text/css" href = "/css/textEditor.css"/>
+	  <link rel = "stylesheet" type = "text/css" href = "/css/welcome.css"/>
+	  <link rel="stylesheet" type="text/css" href="/css/signup.css"/>
+</head>
+<body id='body'>
+	<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {{#if user}}
+              <li role="presentation"><a href="/">Dashboard</a></li>
+              <li role="presentation"><a href="/users/logout">Logout</a></li>
+			  <div id="welcome">
+	  	  		 <div id="topbar" style="z-index: 2; width: 54%; height: 3%; border-radius: 20px;">
+	  	  			<img style="border-radius: 20px; width: 5%; height: 10%; z-index: -1; opacity: 1; position: fixed; left: 20%; top: 20%;" src="\images\logoWithWhiteBackground.png">
+	  	  			<p style="color: #ffffff; position: relative; left: 580px; top: -20px"> Fastest logo maker online </p>
+	  	  			<select id="Categories" class="form-control" style="position: relative; left: 65%; top: -40px; width: 50%; height: 30px; font-size: 15px; font-weight: bold; background-color: #408C4C; color: #FFFFFF">
+	  	  				<option value='All' >All Categories</option>
+	  	  				<option value='Business & Consulting' >Business & Consulting</option>
+	  	  				<option value='Children & Child Care' >Children & Child Care</option>
+	  	  				<option value='Cleaning & Maintenance' >Cleaning & Maintenance</option>
+	  	  				<option value='Communications' >Communications</option>
+	  	  				<option value='Computer & Internet' >Computer & Internet</option>
+	  	  				<option value='Construction & Tools' >Construction & Tools</option>
+	  	  				<option value='Education' >Education</option>
+	  	  				<option value='Fashion & Beauty' >Fashion & Beauty</option>
+	  	  				<option value='Food & Drink' >Food & Drink</option>
+	  	  				<option value='Games & Recreation' >Games & Recreation</option>
+	  	  				<option value='Home Furnishing' >Home Furnishing</option>
+	  	  				<option value='Industrial' >Industrial</option>
+	  	  				<option value='Medical & Pharmaceutical' >Medical & Pharmaceutical</option>
+	  	  				<option value='Photography' >Photography</option>
+	  	  				<option value='Politics' >Politics</option>
+	  	  				<option value='Real Estate & Mortage' >Real Estate & Mortage</option>
+	  	  			</select>
+	  	  			<textarea id="companyName" style="font-size: 20px; font-weight: bold; width: 50%; height: 60px; resize: none; position: relative; left: -275px; top: 50%;">Company Name</textarea>
+	  	  			<button class="button" onclick=changeLogosText() ><span>Go!</span>
+	  	  			<span id="imagee"> </span>
+	  	  			<div id="nameOnLogo"> </div>
+	  	  		</div>
+	  	  	</div>
+	  	  	<div id="welcomeBackground" style="width: 100%; height: 100%; z-index: -5">
+
+	  	  	<div id="topbar">
+	  	  		<a href="what.html"style="position: relative; left: 100px;text-decoration: none; font-size: 150%; color: #FFD700";>T Text</a>
+	  	  		<a href="#"style="position: relative; left: 100px;text-decoration: none; margin: 100px; font-size: 150%"> ▲ Shape </a>
+	  	  		<a href="#"style="position: relative; left: 100px;text-decoration: none; margin: 5px; font-size: 150%"> 🛋 Icon </a>
+	  	  		<a href="save.html"style="position: relative; left: 200px; color: #EE0000; text-decoration: none; margin: 5px; font-size: 200%"> Save </a>
+	  	  		<button id='signUpButton'style="background-color: transparent; position: relative; left: 250px; color: #EE0000; width: 10%; text-decoration: none; margin: 5px; font-size: 150%"> Login </button>
+	  	  		<button id='signUpButton'style="background-color: transparent; position: relative; left: 260px; color: #EE0000; width: 10%; text-decoration: none; margin: 5px; font-size: 150%"> Register </button>
+	  	  	<div id="sidebar" >
+	  	  	<p> Font Size </p>
+	  	  	<input type="number" id="fontSizer" onchange=sizeMe() value="12"></input>
+	  	  	<p> Font Color </p>
+	  	  	<input type="color" id="fontColorer"></input>
+	  	  	<button id="update"type="button" onclick=colorMe()>Update</button>
+	  	  	<p> Font Family </p>
+	  	  <select onclick=fontMe() class="form-control" id='fontFamilier' selected value="Arial"style="width:75%; height:5%">
+	  	   <option value='Times New Roman'>Times New Roman</option>
+	  	   <option value='Georgia'>Georgia</option>
+	  	   <option value='Arial'>Arial</option>
+	  	   <option value='Comic Sans MS'>Comic Sans MS</option>
+	  	   <option value='Courier New'>Courier New</option>
+	  	  </select>
+	  	  	<p> Text Allignment </p>
+	  	  	<select onClick=alignMe() class="form-control" id='fontAlligner' selected value = "Left" style="width:75%; height:5%">
+	  	  		<option value='Left'>Left</option>
+	  	  		<option value='Center'>Center</option>
+	  	  		<option value='Right'>Right</option>
+	  	  	</select>
+	  	  	<p> Font Attributes </p>
+	  	  	<button id="styledButtons"onClick=boldMe() style="font-weight: bold; padding: 10px 15px;">Bold on</button>
+	  	  	<button id="styledButtons"onClick=unboldMe() style="font-weight: normal">Bold off</button>
+	  	  	<button id="styledButtons"onClick=italicMe() style="font-style: italic">Italic on</button>
+	  	  	<button id="styledButtons"onClick=unitalicMe() style="font-style: normal">Italic off</button>
+	  	  	<button id="styledButtons"onClick=cleanMe() style="position:relative;left: 50px;">Clean</button>
+	  	  	<p><bold> Actions </bold></p>
+	  	  	<p style="font-weight: normal; position: relative; left: 30%;"> Rotate </p>
+	  	  	<input type="range" id="rotated" style='position: relative; top: -15px;' onChange=rotateMe() name="points" min="0" max="180" value="0" step="20">
+	  	  	<input onClick=deleteMe() style="height:5%; position: relative; left: 25px; top: 100px;" type="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3058-200.png" />
+	  	  	<button id="styledButtons"onClick=flipMe() style="font-weight: bold; position: relative; bottom: 2px;">Flip</button>
+	  	  	<button id="styledButtons"onClick=unflipMe() style="font-weight: bold; position: relative; bottom: 2px;">Unflip</button>
+	  	  	<button id="styledButtons"onClick=unflipMe() style="font-weight: bold; width: 137px; position: relative; bottom: 2px;">Put on top layer</button>
+	  	  	<input type="range" id="borderSize" onChange=borderMe() min="0" max="20" value="2" step="2">
+	  	  	</div>
+	  	  	<form action="" id="fatherOfKeyed">
+	  	  	Font Size <br>
+	  	  	<textarea type="text" id="Keyed" placeholder="Text"></textarea>
+	  	  	</form>
+	  	  </div>
+            {{else}}
+              <li role="presentation"><a href="/users/login">Login</a></li>
+              <li role="presentation"><a href="/users/register">Register</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        <h3 class="text-muted">LoginApp</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+
+          {{{body}}}
+        </div>
+
+
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2015 LoginApp, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+</body>
+</html>

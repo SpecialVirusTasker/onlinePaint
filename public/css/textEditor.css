@@ -1,0 +1,23 @@
+#styledButtons {
+    /*transform: rotate(20deg);*/
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#update {
+  background-color: #00FFFFFF;
+}
+
+.texted {
+    border: 2px solid;
+    padding: 10px;
+    resize: both;
+    overflow: auto;
+}

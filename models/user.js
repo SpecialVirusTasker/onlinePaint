@@ -15,6 +15,13 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
+	},
+	dateCreated: {
+		type: Date,
+		default: Date.now
+	},
+	ip: {
+		type: String
 	}
 });
 

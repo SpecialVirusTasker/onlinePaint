@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var ip = require('ip');
 
 var User = require('../models/user');
 
@@ -22,6 +23,8 @@ router.post('/register', function(req, res){
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
+	var dateCreated = new Date();
+	var ipAddress = ip.address();
 
 	// Validation
 	req.checkBody('name', 'Name is required').notEmpty();
@@ -42,7 +45,9 @@ router.post('/register', function(req, res){
 			name: name,
 			email:email,
 			username: username,
-			password: password
+			password: password,
+			dateCreated: dateCreated,
+			ip: ipAddress
 		});
 
 		User.createUser(newUser, function(err, user){
@@ -52,7 +57,7 @@ router.post('/register', function(req, res){
 
 		req.flash('success_msg', 'You are registered and can now login');
 
-		
+
 
 		res.redirect('/users/login');
 	}
